@@ -52,6 +52,6 @@ for i in range(checkListSize):
 
 w.after(500, updateStatus)
 w.after(500 * (checkListSize + 2), systemComplete)
-w.after(500 * (checkListSize + 4), w.destroy)
+w.after(500 * (checkListSize + 6), w.destroy)
 
 w.mainloop()
