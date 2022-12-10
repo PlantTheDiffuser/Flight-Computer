@@ -24,17 +24,20 @@ def updateStatus():
     rand = random.randint(0, 100)
     if rand < 50:
         s1[counter]['text'] = "System Name: Offline"
-        s1[counter]['fg'] = "red"
+        s1[counter]['fg'] = "#ea3323"
     else:
         s1[counter]['text'] = "System Name: Online"
-        s1[counter]['fg'] = "green"
+        s1[counter]['fg'] = "#75fb4c"
     counter = counter + 1
     if counter < checkListSize:
         w.after(500, updateStatus)
 
 def systemComplete():
-    l1 = Label(w, text="Systems Check Complete", bg="Green", fg="black", font="verdana 20 bold", width=30, height=2)
+    f1 = Frame(w, width = 576+3, height = 70+3, highlightbackground="#75fb4c", highlightthickness=3)
+    f1.place(relx=0.5, rely=0.5, anchor=CENTER)
+    l1 = Label(w, text="Systems Check Complete", bg="black", fg="#75fb4c", font="verdana 20 bold", width=30, height=2)
     l1.place(relx=0.5, rely=0.5, anchor=CENTER)
+    print(l1.winfo_reqheight())
 
 w = Tk()
 w.title("Systems Check")
