@@ -1,4 +1,3 @@
-from tkinter.ttk import Progressbar
 from tkinter import *
 import random
 
