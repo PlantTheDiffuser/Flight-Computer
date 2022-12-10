@@ -35,11 +35,10 @@ def updateStatus():
 def systemComplete():
     f1 = Frame(w, width = 10, height = 10, highlightbackground="#75fb4c", highlightthickness=3)
     l1 = Label(w, text="Systems Check Complete", bg="black", fg="#75fb4c", font="verdana 20 bold", width=30, height=2)
-    f1['width'] = 456+6
-    f1['height'] = 54+6
+    f1['width'] = l1.winfo_reqwidth()+6
+    f1['height'] = l1.winfo_reqheight()+6
     f1.place(relx=0.5, rely=0.5, anchor=CENTER)
     l1.place(relx=0.5, rely=0.5, anchor=CENTER)
-    print(l1.winfo_reqwidth())
 
 w = Tk()
 w.title("Systems Check")
