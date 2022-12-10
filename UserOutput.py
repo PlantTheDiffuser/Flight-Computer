@@ -24,12 +24,13 @@ def updateStatus():
     rand = random.randint(0, 100)
     if rand < 50:
         s1[counter]['text'] = "System Name: Offline"
-        #s1[counter]['color'] = "red"
+        s1[counter]['fg'] = "red"
     else:
         s1[counter]['text'] = "System Name: Online"
+        s1[counter]['fg'] = "green"
     counter = counter + 1
     if counter < checkListSize:
-        w.after(1000, updateStatus)
+        w.after(500, updateStatus)
 
 def systemComplete():
     l1 = Label(w, text="Systems Check Complete", bg="Green", fg="black", font="verdana 20 bold", width=30, height=2)
@@ -49,8 +50,8 @@ for i in range(checkListSize):
     s1[i] = Label(w, text="System Name: Checking...", bg="black", fg="white", font="verdana 20 bold")
     s1[i].place(x=0, y=38 * i)
 
-w.after(1000, updateStatus)
-w.after(1000 * (checkListSize + 1), systemComplete)
-w.after(1000 * (checkListSize + 2), w.destroy)
+w.after(500, updateStatus)
+w.after(500 * (checkListSize + 2), systemComplete)
+w.after(500 * (checkListSize + 4), w.destroy)
 
 w.mainloop()
