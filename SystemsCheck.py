@@ -1,12 +1,12 @@
 from tkinter import *
-import random
 import sys
 import DRS
 import RearViewCamera
 import SideViewCamera
 import HeadsUpDisplay
+import WaterBottle
 
-systems = [DRS, RearViewCamera, SideViewCamera, HeadsUpDisplay]
+systems = [DRS, RearViewCamera, WaterBottle, SideViewCamera, HeadsUpDisplay]
 
 class Unbuffered(object):
    def __init__(self, stream):
