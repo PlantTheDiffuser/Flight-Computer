@@ -1,5 +1,4 @@
 from tkinter import *
-import random
 import sys
 import DRS
 import RearViewCamera
