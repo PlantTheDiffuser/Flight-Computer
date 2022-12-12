@@ -3,8 +3,10 @@ import random
 import sys
 import DRS
 import RearViewCamera
+import SideViewCamera
+import HeadsUpDisplay
 
-systems = [DRS, RearViewCamera]
+systems = [DRS, RearViewCamera, SideViewCamera, HeadsUpDisplay]
 
 class Unbuffered(object):
    def __init__(self, stream):

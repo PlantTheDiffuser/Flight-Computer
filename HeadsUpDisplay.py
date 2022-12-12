@@ -1,4 +1,4 @@
 def statusCheck():
     return False
 
-name = "                        DRS"
+name = "  Heads Up Display"
