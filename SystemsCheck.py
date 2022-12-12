@@ -24,12 +24,12 @@ sys.stdout = Unbuffered(sys.stdout)
 counter = 0
 def updateStatus():
     global counter
-    if systems[counter].statusCheck() == False:
-        sysLab[counter]['text'] = text=("%s: Offline" % (systems[counter].name))
-        sysLab[counter]['fg'] = "#ea3323"
-    else:
+    if systems[counter].statusCheck() == True:
         sysLab[counter]['text'] = text=("%s: Online" % (systems[counter].name))
         sysLab[counter]['fg'] = "#75fb4c"
+    else:
+        sysLab[counter]['text'] = text=("%s: Offline" % (systems[counter].name))
+        sysLab[counter]['fg'] = "#ea3323"
     counter = counter + 1
     if counter < len(systems):
         w.after(500, updateStatus)
