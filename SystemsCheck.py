@@ -6,8 +6,9 @@ import SideViewCamera
 import HeadsUpDisplay
 import WaterBottle
 import ScoutDrones
+import NitrousOxide
 
-systems = [DRS, RearViewCamera, WaterBottle, SideViewCamera, HeadsUpDisplay, ScoutDrones]
+systems = [RearViewCamera, NitrousOxide, DRS, WaterBottle, SideViewCamera, HeadsUpDisplay, ScoutDrones]
 
 class Unbuffered(object):
    def __init__(self, stream):
@@ -26,10 +27,10 @@ counter = 0
 def updateStatus():
     global counter
     if systems[counter].statusCheck() == True:
-        sysLab[counter]['text'] = text=("%s: Online" % (systems[counter].name))
+        sysLab[counter]['text'] = ("%s: Online" % (systems[counter].name))
         sysLab[counter]['fg'] = "#75fb4c"
     else:
-        sysLab[counter]['text'] = text=("%s: Offline" % (systems[counter].name))
+        sysLab[counter]['text'] = ("%s: Offline" % (systems[counter].name))
         sysLab[counter]['fg'] = "#ea3323"
     counter = counter + 1
     if counter < len(systems):
@@ -37,7 +38,7 @@ def updateStatus():
 
 def systemComplete():
     f1 = Frame(w, width = 10, height = 10, highlightbackground="#75fb4c", highlightthickness=3)
-    l1 = Label(w, text="Systems Check Complete", bg="black", fg="#75fb4c", font="verdana 20 bold", width=30, height=2)
+    l1 = Label(w, text="Systems Check Complete", bg="black", fg="#75fb4c", font="verdana 20 bold", width=30, height=3)
     f1['width'] = l1.winfo_reqwidth()+6
     f1['height'] = l1.winfo_reqheight()+6
     f1.place(relx=0.5, rely=0.5, anchor=CENTER)
