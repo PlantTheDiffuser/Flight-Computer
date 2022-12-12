@@ -1,6 +1,10 @@
 from tkinter import *
 import random
+import sys
 import DRS
+import RearViewCamera
+
+systems = [DRS, RearViewCamera]
 
 class Unbuffered(object):
    def __init__(self, stream):
@@ -13,23 +17,19 @@ class Unbuffered(object):
        self.stream.flush()
    def __getattr__(self, attr):
        return getattr(self.stream, attr)
-
-import sys
 sys.stdout = Unbuffered(sys.stdout)
 
 counter = 0
-
 def updateStatus():
     global counter
-    rand = random.randint(0, 100)
-    if rand < 50:
-        s1[counter]['text'] = "System Name: Offline"
-        s1[counter]['fg'] = "#ea3323"
+    if systems[counter].statusCheck() == False:
+        sysLab[counter]['text'] = text=("%s: Offline" % (systems[counter].name))
+        sysLab[counter]['fg'] = "#ea3323"
     else:
-        s1[counter]['text'] = "System Name: Online"
-        s1[counter]['fg'] = "#75fb4c"
+        sysLab[counter]['text'] = text=("%s: Online" % (systems[counter].name))
+        sysLab[counter]['fg'] = "#75fb4c"
     counter = counter + 1
-    if counter < checkListSize:
+    if counter < len(systems):
         w.after(500, updateStatus)
 
 def systemComplete():
@@ -47,15 +47,16 @@ screenWidth = w.winfo_screenwidth()
 screenHeight = w.winfo_screenheight()
 w.geometry("%dx%d+%d+%d" % (screenWidth, screenHeight, 0, 0))
 
-checkListSize = 10
-s1 = [Label] * checkListSize
+sysLab = [Label] * len(systems)
 
-for i in range(checkListSize):
-    s1[i] = Label(w, text="System Name: Checking...", bg="black", fg="white", font="verdana 20 bold")
-    s1[i].place(x=0, y=s1[i].winfo_reqheight() * i)
+for i in range(len(systems)):
+    
+    
+    sysLab[i] = Label(w, text=("%s: Checking..." % (systems[i].name)), bg="black", fg="white", font="verdana 20 bold")
+    sysLab[i].place(x=0, y=sysLab[i].winfo_reqheight() * i)
 
-w.after(500, updateStatus)
-w.after(500 * (checkListSize + 2), systemComplete)
-w.after(500 * (checkListSize + 6), w.destroy)
+w.after(1500, updateStatus)
+w.after(500 * (len(systems) + 4), systemComplete)
+w.after(500 * (len(systems) + 8), w.destroy)
 
 w.mainloop()

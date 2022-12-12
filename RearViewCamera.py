@@ -1,4 +1,4 @@
 def statusCheck():
     return True
 
-name = "                        DRS"
+name = "Rear View Camera"
