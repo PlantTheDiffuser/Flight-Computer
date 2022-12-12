@@ -1,0 +1,2 @@
+def statusCheck():
+    return True

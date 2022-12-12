@@ -1,5 +1,6 @@
 from tkinter import *
 import random
+import DRS
 
 class Unbuffered(object):
    def __init__(self, stream):
