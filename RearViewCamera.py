@@ -1,5 +1,5 @@
-from gpiozero import Servo
-from picamera import piCamera
+#from gpiozero import Servo
+#from picamera import piCamera
 from time import sleep
 
 #Called only by SystemsCheck.py on startup
@@ -8,7 +8,7 @@ def statusCheck():
 name = "Rear View Camera"
 #--
 
-camera = piCamera()
+""" camera = piCamera()
 servo = Servo(25)
 rightSignal = "pin 15"
 leftSignal = "pin 14"
@@ -23,5 +23,5 @@ if leftSignal == "Hi" :
     servo.min()
     sleep(5)
     camera.start_preview()
-servo.mid()
+servo.mid() """
 
