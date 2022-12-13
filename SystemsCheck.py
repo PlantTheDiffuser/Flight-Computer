@@ -7,8 +7,9 @@ import HeadsUpDisplay
 import WaterBottle
 import ScoutDrones
 import NitrousOxide
+import SteeringWheel
 
-systems = [RearViewCamera, NitrousOxide, DRS, WaterBottle, SideViewCamera, HeadsUpDisplay, ScoutDrones]
+systems = [RearViewCamera, NitrousOxide, DRS, WaterBottle, SideViewCamera, HeadsUpDisplay, ScoutDrones, SteeringWheel]
 
 class Unbuffered(object):
    def __init__(self, stream):
