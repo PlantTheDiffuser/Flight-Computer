@@ -38,17 +38,14 @@ def updateLap():
     if qualifying != 0:
         lap['text'] = ("Q%d" % (qualifying))
         return
-    if TotalLaps == 0:
+    if TotalLaps == 0 or Lap == TotalLaps:
         return
     if Lap == 0:
         Lap = 1
         updateCurrentLap()
         lap['text'] = ("LAP %d/%d" % (Lap, TotalLaps))
         return
-
-
     LapTimes[Lap - 1] = currentLapTime
-    print(LapTimes)
     Lap += 1
     lap['text'] = ("LAP %d/%d" % (Lap, TotalLaps))
     t1 = updateLastLap()
