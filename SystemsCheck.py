@@ -49,7 +49,7 @@ w.title("Systems Check")
 w.configure(background='black')
 screenWidth = w.winfo_screenwidth()
 screenHeight = w.winfo_screenheight()
-w.geometry("%dx%d+%d+%d" % (screenWidth, screenHeight, 0, 0))
+w.geometry("%dx%d+%d+%d" % (screenWidth, screenHeight, -10, 0))
 
 sysLab = [Label] * len(systems)
 
