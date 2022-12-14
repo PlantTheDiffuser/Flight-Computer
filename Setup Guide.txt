@@ -1,0 +1,26 @@
+SetUp.py is where all preditermined race info goes
+To be set up before race start
+
+
+
+TotalLaps = 10
+-Number of laps for race
+-0 = Not racing
+
+qualifying = 0
+-0 = Race, 
+-1 = Q1
+-2 = Q2
+-3 = Q3
+
+strat = 6
+-strat 1 = 
+-strat 2 = 
+-strat 3 = 
+-strat 4 = 
+-strat 5 = 
+-strat 6 = Driver Defaults
+
+brakeBias = 62
+-The percent of brake pressure that goes to the front brakes
+-62 = 62% brake pressure goes to front brakes, 38% goes to rear brakes
