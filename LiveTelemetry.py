@@ -104,8 +104,8 @@ def updateDeltaTime():
 w = tk.Tk()
 w.title("Systems Check")
 w.configure(background='black')
-screenWidth = 800#w.winfo_screenwidth()
-screenHeight = 480#w.winfo_screenheight()
+screenWidth = w.winfo_screenwidth()
+screenHeight = w.winfo_screenheight()
 w.geometry("%dx%d+%d+%d" % (screenWidth, screenHeight, 0, 0))
 
 #Pedal position indicators
