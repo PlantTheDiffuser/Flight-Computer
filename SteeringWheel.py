@@ -1,4 +1,7 @@
+import Gamepad
+
 def statusCheck():
-    return False
+    return Gamepad.available()
 
 name = "      Steering Wheel"
+
