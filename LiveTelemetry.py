@@ -118,8 +118,8 @@ PPIyRef = screenHeight - (barSpacing + throttle.winfo_reqheight())
 
 brake.place(x = PPIxRef, y = PPIyRef)
 throttle.place(x = PPIxRef + barSpacing + throttle.winfo_reqwidth(), y = PPIyRef)
-w.after(1, updateThrottle)
-w.after(1, updateBrake)
+#w.after(1, updateThrottle)
+#w.after(1, updateBrake)
 
 #Lap time information
 LapTimeFrame = tk.Frame(w, width = 220, height = 250, highlightbackground="#FFFFFF", highlightthickness=3, bg="black")
@@ -159,6 +159,7 @@ strat.place(x = 10, y = LapTimeFrame.winfo_reqheight() + brakeBal.winfo_reqheigh
 lapbutton = tk.Button(w, text="LAP", command=updateLap, bg="black", fg="#FFFFFF", font="helvetica 24 bold", width=8, height=1)
 lapbutton.pack()
 
+
 gamepad = Gamepad.Gamepad()
 while True:
     eventType, index, value = gamepad.getNextEvent()
@@ -167,5 +168,3 @@ while True:
         updateLap()
 
 w.mainloop()
-
-

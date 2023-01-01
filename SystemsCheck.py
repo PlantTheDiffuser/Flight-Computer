@@ -1,4 +1,5 @@
 from tkinter import *
+import time
 import sys
 import DRS
 import RearViewCamera
@@ -44,6 +45,8 @@ def systemComplete():
     f1['height'] = l1.winfo_reqheight()+6
     f1.place(relx=0.5, rely=0.5, anchor=CENTER)
     l1.place(relx=0.5, rely=0.5, anchor=CENTER)
+
+time.sleep(2)
 
 w = Tk()
 w.title("Systems Check")
