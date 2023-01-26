@@ -3,7 +3,7 @@ import tkinter.ttk as ttk
 import SetUp
 import random
 import time
-import Gamepad
+#import Gamepad
 
 ##Start after systems check
 
@@ -159,12 +159,13 @@ strat.place(x = 10, y = LapTimeFrame.winfo_reqheight() + brakeBal.winfo_reqheigh
 lapbutton = tk.Button(w, text="LAP", command=updateLap, bg="black", fg="#FFFFFF", font="helvetica 24 bold", width=8, height=1)
 lapbutton.pack()
 
-
+"""
 gamepad = Gamepad.Gamepad()
 while True:
     eventType, index, value = gamepad.getNextEvent()
     if index == 7 and value == True:
         print("Lap")
         updateLap()
+"""
 
 w.mainloop()
